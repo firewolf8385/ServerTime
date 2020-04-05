@@ -1,5 +1,7 @@
 package org.firewolf8385.servertime.objects;
 
+import org.bukkit.Bukkit;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,22 +74,21 @@ public class TimeSlot
      */
     public static TimeSlot getCurrentTimeSlot(Time t)
     {
-        TimeSlot s = getTimeSlots().get(0);
         int time = (t.getHour() * 60) + t.getMinute();
 
-        for(TimeSlot slot : slots)
+        for(int i = 0; i < slots.size() - 1; i++)
         {
+            TimeSlot slot = slots.get(i);
             if(time >= slot.getStart() && time <= slot.getEnd())
             {
                 if(slot.getDays().contains(t.getDay()))
                 {
-                    s = slot;
-                    break;
+                    return slot;
                 }
             }
         }
 
-        return s;
+        return slots.get(slots.size() - 1);
     }
 
     /**

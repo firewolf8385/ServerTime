@@ -43,14 +43,14 @@ public class ServerTime extends JavaPlugin
     private void registerTimeSlots()
     {
         ConfigurationSection section = settings.getConfig()
-                .getConfigurationSection("TimeSlots");
+                .getConfigurationSection("TimeSlot");
 
         for(String str : section.getKeys(false))
         {
-            String name = settings.getConfig().getString("TimeSlots." + str + ".name");
-            int start = (settings.getConfig().getInt("TimeSlots." + str + ".start.hour") * 60) + settings.getConfig().getInt("TimeSlots." + str + ".start.minute");
-            int end = (settings.getConfig().getInt("TimeSlots." + str + ".end.hour") * 60) + settings.getConfig().getInt("TimeSlots." + str + ".end.minute");
-            List<Integer> days = settings.getConfig().getIntegerList("TimeSlots." + str + ".weekdays");
+            String name = settings.getConfig().getString("TimeSlot." + str + ".name");
+            int start = (settings.getConfig().getInt("TimeSlot." + str + ".start.hour") * 60) + settings.getConfig().getInt("TimeSlots." + str + ".start.minute");
+            int end = (settings.getConfig().getInt("TimeSlot." + str + ".end.hour") * 60) + settings.getConfig().getInt("TimeSlots." + str + ".end.minute");
+            List<Integer> days = settings.getConfig().getIntegerList("TimeSlot." + str + ".weekdays");
 
             new TimeSlot(name, start, end, days);
         }
