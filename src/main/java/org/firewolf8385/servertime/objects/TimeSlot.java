@@ -25,6 +25,8 @@ public class TimeSlot
         this.start = start;
         this.end = end;
         this.days = days;
+
+        slots.add(this);
     }
 
     /**
