@@ -26,6 +26,14 @@ public class Time
      */
     public Time()
     {
+        counter = 0;
+
+        month = settings.getConfig().getInt("Time.Month");
+        day = settings.getConfig().getInt("Time.Day");
+        weekDay = settings.getConfig().getInt("Time.WeekDay");
+        hour = settings.getConfig().getInt("Time.Hour");
+        minute = settings.getConfig().getInt("Time.Minute");
+
         for(String str : settings.getConfig().getStringList("Worlds"))
         {
             World w = Bukkit.getWorld(str);
@@ -33,16 +41,9 @@ public class Time
             if(w != null)
             {
                 w.setGameRuleValue("doDaylightCycle", "false");
+                w.setFullTime((hour * 1000) + (minute * 16) + 18000);
             }
         }
-
-        counter = 0;
-
-        month = settings.getConfig().getInt("Time.Month");
-        day = settings.getConfig().getInt("Time.Day");
-        weekDay = settings.getConfig().getInt("Time.WeekDay");
-        hour = settings.getConfig().getInt("Time.Hour");
-        minute = settings.getConfig().getInt("Time.Minute");;
     }
 
     /**
@@ -144,7 +145,7 @@ public class Time
 
         time += minute + "";
 
-        String format = Month.getFromInt(month) + " " + day;
+        String format = Month.getFromInt(month).getName() + " " + day;
 
         switch(day)
         {
