@@ -1,0 +1,6 @@
+main: org.firewolf8385.servertime.ServerTime
+
+name: ServerTime
+version: 1.0
+api-version: 1.13
+author: firewolf8385
