@@ -28,6 +28,17 @@ public class ServerTime extends JavaPlugin
         registerTimeSlots();
     }
 
+    @Override
+    public void onDisable()
+    {
+        settings.getConfig().set("Time.Month", time.getMonth().getNumber());
+        settings.getConfig().set("Time.Day", time.getDay());
+        settings.getConfig().set("Time.WeekDay", time.getWeekDay());
+        settings.getConfig().set("Time.Hour", time.getHour());
+        settings.getConfig().set("Time.Minute", time.getMinute());
+        settings.saveConfig();
+    }
+
     /**
      * Get the current time.
      * @return Time
