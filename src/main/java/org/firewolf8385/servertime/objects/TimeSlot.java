@@ -1,6 +1,7 @@
 package org.firewolf8385.servertime.objects;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TimeSlot
 {
@@ -9,7 +10,7 @@ public class TimeSlot
     private String name;
     private int start;
     private int end;
-    private int[] days;
+    private List<Integer> days;
 
     /**
      * Create a new TimeSlot object.
@@ -18,7 +19,7 @@ public class TimeSlot
      * @param end Time the slot ends.
      * @param days Days the slot runs.
      */
-    public TimeSlot(String name, int start, int end, int[] days)
+    public TimeSlot(String name, int start, int end, List<Integer> days)
     {
         this.name = name;
         this.start = start;
@@ -30,7 +31,7 @@ public class TimeSlot
      * Get the days the timeslot applies to
      * @return days
      */
-    public int[] getDays()
+    public List<Integer> getDays()
     {
         return days;
     }
@@ -76,13 +77,10 @@ public class TimeSlot
         {
             if(time >= slot.getStart() && time <= slot.getEnd())
             {
-                for(int i : slot.getDays())
+                if(slot.getDays().contains(t.getDay()))
                 {
-                    if(i == t.getWeekDay())
-                    {
-                        s = slot;
-                        break;
-                    }
+                    s = slot;
+                    break;
                 }
             }
         }
