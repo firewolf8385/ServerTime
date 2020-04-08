@@ -35,3 +35,147 @@ TimeSlot:
       - 5
       - 6
       - 7
+  2:
+    name: "Morning"
+    start:
+      hour: 5
+      minute: 0
+    end:
+      hour: 7
+      minute: 0
+    weekdays:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+  3:
+    name: "1st Hour"
+    start:
+      hour: 7
+      minute: 0
+    end:
+      hour: 8
+      minute: 45
+    weekdays:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  4:
+    name: "2nd Hour"
+    start:
+      hour: 8
+      minute: 45
+    end:
+      hour: 8
+      minute: 50
+    weekdays:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  5:
+    name: "3rd Hour"
+    start:
+      hour: 8
+      minute: 50
+    end:
+      hour: 9
+      minute: 50
+    weekdays:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  6:
+    name: "4th Hour"
+    start:
+      hour: 9
+      minute: 50
+    end:
+      hour: 11
+      minute: 0
+    weekdays:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  7:
+    name: "Lunch"
+    start:
+      hour: 11
+      minute: 0
+    end:
+      hour: 12
+      minute: 0
+    weekdays:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  8:
+    name: "5th Hour"
+    start:
+      hour: 12
+      minute: 0
+    end:
+      hour: 13
+      minute: 0
+    weekdays:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  9:
+    name: "6th Hour"
+    start:
+      hour: 13
+      minute: 0
+    end:
+      hour: 14
+      minute: 0
+    weekdays:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  10:
+    name: "After School"
+    start:
+      hour: 14
+      minute: 0
+    end:
+      hour: 18
+      minute: 0
+    weekdays:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  11:
+    name: "Evening"
+    start:
+      hour: 18
+      minute: 0
+    end:
+      hour: 24
+      minute: 0
+    weekdays:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
